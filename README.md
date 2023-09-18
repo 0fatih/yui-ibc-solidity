@@ -1,7 +1,7 @@
 # IBC-Solidity
 
-![Test](https://github.com/hyperledger-labs/yui-ibc-solidity/workflows/Test/badge.svg)
-[![GoDoc](https://godoc.org/github.com/hyperledger-labs/yui-ibc-solidity?status.svg)](https://pkg.go.dev/github.com/hyperledger-labs/yui-ibc-solidity?tab=doc)
+![Test](https://0fatih/hyperledger-labs/yui-ibc-solidity/workflows/Test/badge.svg)
+[![GoDoc](https://godoc.org/0fatih/hyperledger-labs/yui-ibc-solidity?status.svg)](https://pkg.go.dev/0fatih/hyperledger-labs/yui-ibc-solidity?tab=doc)
 
 [IBC](https://github.com/cosmos/ibc) implementations in Solidity.
 
@@ -28,6 +28,7 @@ NOTE: This is yet pre-beta non-production-quality software.
 You can deploy a Light Client that implements [the IClient interface](./contracts/core/02-client/ILightClient.sol) to [integrate with IBC-Solidity](./docs/architecture.md#light-client).
 
 Here are some such examples:
+
 - [IBFT 2.0 Light Client](./contracts/clients/IBFT2Client.sol)
 - [Tendermint Light Client](https://github.com/datachainlab/tendermint-sol/tree/use-ibc-sol-hmy)
 - [Mock Client](./contracts/clients/MockClient.sol)
@@ -35,8 +36,8 @@ Here are some such examples:
 ## Related projects
 
 - A demo of trustless bridge
-    - between Harmony and Cosmos(Tendermint): https://github.com/datachainlab/harmony-cosmos-bridge-demo
-    - between Celo and Cosmos: https://github.com/ChorusOne/celo-cosmos-bridge
+  - between Harmony and Cosmos(Tendermint): https://github.com/datachainlab/harmony-cosmos-bridge-demo
+  - between Celo and Cosmos: https://github.com/ChorusOne/celo-cosmos-bridge
 
 ## For Developers
 
@@ -63,6 +64,7 @@ $ make e2e-test
 ### E2E-test with IBC-Relayer
 
 An example of E2E with IBC-Relayer([yui-relayer](https://github.com/hyperledger-labs/yui-relayer)) can be found here:
+
 - https://github.com/datachainlab/yui-relayer-build/tree/v0.3/tests/cases/eth2eth
 - https://github.com/datachainlab/yui-relayer-build/blob/v0.3/.github/workflows/v0.3-eth2eth.yml
 
@@ -73,6 +75,7 @@ To generate the proto encoders and decoders in solidity from proto files, you ne
 Currently, [v0.1.0](https://github.com/datachainlab/solidity-protobuf/tree/v0.1.0) is required.
 
 If you edit the proto definitions, you should execute the following command:
+
 ```
 $ make SOLPB_DIR=/path/to/solidity-protobuf proto-sol
 ```

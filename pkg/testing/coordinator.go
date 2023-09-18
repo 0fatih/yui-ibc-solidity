@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	channeltypes "github.com/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/channel"
-	clienttypes "github.com/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/client"
+	channeltypes "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/channel"
+	clienttypes "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/client"
 	"github.com/stretchr/testify/require"
 )
 

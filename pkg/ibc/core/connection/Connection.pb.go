@@ -8,7 +8,7 @@ import (
 	_ "github.com/datachainlab/solidity-protobuf/protobuf-solidity/src/protoc/go"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
-	commitment "github.com/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/commitment"
+	commitment "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/commitment"
 	io "io"
 	math "math"
 	math_bits "math/bits"

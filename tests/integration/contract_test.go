@@ -7,12 +7,12 @@ import (
 	"strings"
 	"testing"
 
+	"0fatih/hyperledger-labs/yui-ibc-solidity/pkg/client"
+	channeltypes "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/channel"
+	clienttypes "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/client"
+	ibctesting "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/testing"
 	ibcclienttypes "github.com/cosmos/ibc-go/v4/modules/core/02-client/types"
 	host "github.com/cosmos/ibc-go/v4/modules/core/24-host"
-	"github.com/hyperledger-labs/yui-ibc-solidity/pkg/client"
-	channeltypes "github.com/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/channel"
-	clienttypes "github.com/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/client"
-	ibctesting "github.com/hyperledger-labs/yui-ibc-solidity/pkg/testing"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 )

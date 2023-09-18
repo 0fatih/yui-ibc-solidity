@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"math/big"
 
+	"0fatih/hyperledger-labs/yui-ibc-solidity/pkg/chains"
+	"0fatih/hyperledger-labs/yui-ibc-solidity/pkg/client"
+	ibcclient "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/client"
 	"github.com/ethereum/go-ethereum/common"
 	gethtypes "github.com/ethereum/go-ethereum/core/types"
-	"github.com/hyperledger-labs/yui-ibc-solidity/pkg/chains"
-	"github.com/hyperledger-labs/yui-ibc-solidity/pkg/client"
-	ibcclient "github.com/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/client"
 )
 
 type LightClient struct {
