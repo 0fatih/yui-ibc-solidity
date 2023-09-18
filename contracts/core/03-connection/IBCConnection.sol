@@ -71,6 +71,10 @@ contract IBCConnection is IBCStore, IIBCConnectionHandshake {
             })
         });
 
+        (bytes memory consensusStateBytes, bool ok) =
+            getSelfConsensusState(msg_.consensusHeight, msg_.hostConsensusStateProof);
+        require(ok, "failed to get consensus state");
+
         require(
             verifyConnectionState(
                 connection, msg_.proofHeight, msg_.proofInit, msg_.counterparty.connection_id, expectedConnection
@@ -87,7 +91,12 @@ contract IBCConnection is IBCStore, IIBCConnectionHandshake {
             ),
             "failed to verify clientState"
         );
-        // TODO we should also verify a consensus state
+        require(
+            verifyClientConsensusState(
+                connection, msg_.proofHeight, msg_.consensusHeight, msg_.proofConsensus, consensusStateBytes
+            ),
+            "failed to verify consensus state"
+        );
 
         updateConnectionCommitment(connectionId);
         return connectionId;
@@ -105,6 +114,10 @@ contract IBCConnection is IBCStore, IIBCConnectionHandshake {
             "the counterparty selected version is not supported by versions selected on INIT"
         );
         require(validateSelfClient(msg_.clientStateBytes), "failed to validate self client state");
+
+        (bytes memory consensusStateBytes, bool ok) =
+            getSelfConsensusState(msg_.consensusHeight, msg_.hostConsensusStateProof);
+        require(ok, "failed to get consensus state");
 
         Counterparty.Data memory expectedCounterparty = Counterparty.Data({
             client_id: connection.client_id,
@@ -136,7 +149,12 @@ contract IBCConnection is IBCStore, IIBCConnectionHandshake {
             ),
             "failed to verify clientState"
         );
-        // TODO we should also verify a consensus state
+        require(
+            verifyClientConsensusState(
+                connection, msg_.proofHeight, msg_.consensusHeight, msg_.proofConsensus, consensusStateBytes
+            ),
+            "failed to verify consensus state"
+        );
 
         connection.state = ConnectionEnd.State.STATE_OPEN;
         copyVersions(expectedConnection.versions, connection.versions);
@@ -252,6 +270,21 @@ contract IBCConnection is IBCStore, IIBCConnectionHandshake {
     function validateSelfClient(bytes memory) internal view virtual returns (bool) {
         this; // this is a trick that suppresses "Warning: Function state mutability can be restricted to pure"
         return true;
+    }
+
+    /**
+     * @dev getSelfConsensusState returns the consensus state of the host chain.
+     *
+     * NOTE: Developers can override this function to support an arbitrary EVM chain.
+     */
+    function getSelfConsensusState(Height.Data memory, bytes memory)
+        internal
+        view
+        virtual
+        returns (bytes memory consensusStateBytes, bool ok)
+    {
+        this; // this is a trick that suppresses "Warning: Function state mutability can be restricted to pure"
+        return (consensusStateBytes, false);
     }
 
     /**
