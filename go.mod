@@ -1,4 +1,4 @@
-module 0fatih/hyperledger-labs/yui-ibc-solidity
+module 0fatih/yui-ibc-solidity
 
 go 1.20
 

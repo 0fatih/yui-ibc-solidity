@@ -8,10 +8,11 @@ import (
 	"testing"
 	"time"
 
-	"0fatih/hyperledger-labs/yui-ibc-solidity/pkg/client"
-	channeltypes "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/channel"
-	clienttypes "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/client"
-	ibctesting "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/testing"
+	"0fatih/yui-ibc-solidity/pkg/client"
+	channeltypes "0fatih/yui-ibc-solidity/pkg/ibc/core/channel"
+	clienttypes "0fatih/yui-ibc-solidity/pkg/ibc/core/client"
+	ibctesting "0fatih/yui-ibc-solidity/pkg/testing"
+
 	"github.com/avast/retry-go"
 	"github.com/stretchr/testify/suite"
 )

@@ -5,10 +5,11 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"0fatih/hyperledger-labs/yui-ibc-solidity/pkg/contract/ibchandler"
-	channeltypes "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/channel"
-	commitmenttypes "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/commitment"
-	connectiontypes "0fatih/hyperledger-labs/yui-ibc-solidity/pkg/ibc/core/connection"
+	"0fatih/yui-ibc-solidity/pkg/contract/ibchandler"
+	channeltypes "0fatih/yui-ibc-solidity/pkg/ibc/core/channel"
+	commitmenttypes "0fatih/yui-ibc-solidity/pkg/ibc/core/commitment"
+	connectiontypes "0fatih/yui-ibc-solidity/pkg/ibc/core/connection"
+
 	"github.com/gogo/protobuf/proto"
 	"github.com/gogo/protobuf/types"
 )
